@@ -31,8 +31,10 @@ class Solution(object):
         if None == head or None == head.next:
             return head
         else:
-            temp = head.next
-            head.next = self.swapPairs(temp.next)
-            temp.next = head
+            temp = head.next  # temp = 2
+            head.next = self.swapPairs(
+                temp.next
+            )  # swap 3 and 4 (repeat process) or just return 3 if there is no pair
+            temp.next = head  # 2.next = 1
 
-            return temp
+            return temp  # return 2
